@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>ex4</title>
+</head>
+<html>
+    <body>
+        <p id ='text' style="color: aqua;">Il fait beau!</p>
+        <button id='Mauvais'>Mauvais</button>
+        <button id='Beau'>Beau</button>
+        <button id='Couleur'>Couleur</button>
+
+        <script>
+            let mauvais=document.getElementById('Mauvais');
+            let beau=document.getElementById('Beau');
+            let color=document.getElementById('Couleur');
+
+            mauvais.addEventListener("click",(event) => {document.getElementById('text').textContent="il fait mauvais"});
+            beau.addEventListener("click",(event) => {document.getElementById('text').textContent="il fait beau!"});
+            color.addEventListener("click",function(){
+                var randomColor = '#'+Math.floor(Math.random()*16777215).toString(16);
+                document.getElementById('text').style.color=randomColor;
+            });
+
+            
+            
+            
+        </script>
+    </body>
+</html>

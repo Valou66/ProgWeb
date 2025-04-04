@@ -1,0 +1,42 @@
+body{
+    background-color: white;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: normal;
+
+}
+
+h1{
+    background-color: white;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: normal;
+    font-size: medium;
+}
+
+h2{
+    background-color: white;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: normal;
+    font-size: medium;
+}
+
+img{
+    display: none;
+}
+
+strong{
+    font-weight: normal;
+}
+
+.fluo{
+    font-weight: normal;
+}
+
+a:link{
+    text-decoration: none;
+    color: black;
+}
+
+footer{
+    display: none;
+}
+

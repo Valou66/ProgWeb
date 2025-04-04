@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercice 6 (DOM)</title>
+</head>
+<body>
+    <button onclick="ajouterFruit()">Push</button>
+    <button onclick="enleverDernierFruit()">Pop</button>
+    <button onclick="enleverPremierFruit()">Shift</button>
+    <button onclick="renverserFruits()">Renverser</button>
+    <h1>Exercice 6 (DOM)</h1>
+    
+    
+    <section id="section1">
+        <h2>Liste des fruits</h2>
+        <p id="fruits"></p>
+    </section>
+    
+    <section id="section2">
+        <h2>Liste des fruits (inverse)</h2>
+        <p id="fruitsInverse"></p>
+    </section>
+    
+    <section id="section3">
+        <h2>Liste</h2>
+        <ul id="fruitsListe"></ul>
+    </section>
+    
+    
+
+    <script>
+        let tab_fruit = ['poire','raisin', 'orange', 'framboise'];
+        function afficherFruits() {
+            document.getElementById('fruits').textContent = tab_fruit.join(' ');
+            document.getElementById('fruitsInverse').textContent = tab_fruit.slice().reverse().join(' ');
+            document.getElementById('fruitsListe').innerHTML = tab_fruit.map(fruit => `<li>${fruit}</li>`).join('');
+        }
+
+        function ajouterFruit() {
+            var fruit = prompt("Entrez le nom d'un fruit :");
+            if (fruit) {
+                tab_fruit.push(fruit);
+                afficherFruits();
+            }
+        }
+
+        function enleverDernierFruit() {
+            tab_fruit.pop();
+            afficherFruits();
+        }
+
+        function enleverPremierFruit() {
+            tab_fruit.shift();
+            afficherFruits();
+        }
+
+        function renverserFruits() {
+            tab_fruit.reverse();
+            afficherFruits();
+        }
+
+        afficherFruits();
+    </script>
+
+</body>
+</html>

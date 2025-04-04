@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            test
+        </title>
+    </head>
+    <body>
+        <h1>
+            titre pour un dom
+        </h1>
+        <div>
+            <p>
+                Un paragraphe pour un dom et un
+            </p>
+            <table>
+                <tbody>
+                    <tr>
+                        <td>
+                            a
+                        </td>
+                        <td>
+                            b
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            c
+                        </td>
+                        <td>
+                            d
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </body>
+
+    <script>
+        var paragraphes=document.getElementsByTagName("html");
+        function show_p(e,pqr,p){
+            if(pqr==p){
+                document.writeln(e.tagName);
+            }
+            if(e.tagName!="undefined"){
+                var t=e.children;
+                for(let i=0;i<t.length;i++){
+                    show_p(e.children[i],pqr+1,p);
+                }
+
+            }
+        }
+        show_p(paragraphes[0],0,1)
+
+        
+    </script>
+</html>
+

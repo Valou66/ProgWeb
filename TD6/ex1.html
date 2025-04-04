@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <title> canva </title>
+    </head>
+    <body>
+        <h1>
+            canva
+        </h1>
+        <canvas id="fresque" width="500" height="500">
+            
+        </canvas>
+
+        <script>
+            var n=1000;
+            function rand_color(){
+                var nr,ng,nb;
+
+                nr=parseInt(255*Math.random());
+                ng=parseInt(255*Math.random());
+                nb=parseInt(255*Math.random());
+
+                nr.toString();
+                ng.toString();
+                nb.toString();
+
+                var rgb="rgb("+nr+","+ng+","+nb+")"
+
+                return rgb;
+            }
+
+            var ctx=document.getElementById("fresque").getContext("2d");
+
+
+            for(let i=0;i<n;i++){
+                var l=5+parseInt(25*Math.random());
+                var h=10+parseInt(40*Math.random());
+                
+                var x=parseInt(500*Math.random());
+                var y=parseInt(500*Math.random());
+
+                ctx.fillRect(x,y,l,h);
+                ctx.fillStyle=rand_color();
+            }
+
+        </script>
+
+        
+
+
+    </body>
+</html>
+

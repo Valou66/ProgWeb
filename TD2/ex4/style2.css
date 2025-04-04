@@ -1,0 +1,29 @@
+html{
+    scroll-behavior: smooth;
+}
+
+a:link{
+    color: white;
+    text-decoration: none;
+}
+
+a:visited{
+    color: white;
+}
+
+body{
+    display: flex;
+    flex-direction: row;
+}
+
+nav{
+    position: sticky;
+    top:0px;
+}
+
+.droite{
+    position:sticky;
+    
+}
+
+

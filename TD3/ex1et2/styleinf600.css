@@ -1,0 +1,31 @@
+h1{
+    background-color: darkblue;
+    color: white;
+
+}
+
+h2{
+    color:black;
+    font-size: medium;
+}
+
+strong{
+    font-weight: bold;
+}
+
+.fluo{
+    font-style: italic;
+}
+
+img{
+    display: none;
+}
+
+article{
+    background-color: lightblue;
+    font-size: small;
+}
+
+footer{
+    display: none;
+}

@@ -1,0 +1,38 @@
+h1{
+    text-align: center;
+}
+
+q{
+    color: #1d8791;
+}
+
+h2{
+    color: #184f79;
+}
+
+strong{
+    font-size: larger;
+    color: #184f79;
+}
+
+.fluo{
+    background-color: #4dc8b9;
+}
+
+img{
+    float: right;
+    width: 400px;
+}
+
+article{
+    background-color: #e2c5a6;
+    padding: 1em;
+    border-width: 0.15em;
+    border-style: solid;
+    border-color: #184f79;
+}
+
+footer{
+    font-size: x-small;
+    text-align: right;
+}

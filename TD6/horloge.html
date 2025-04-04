@@ -1,0 +1,35 @@
+<html>
+<title> Horloge canvas </title>
+  <body>
+    <h1> Animation : horloge </h1>
+    <p id="pos">
+
+    <p>
+    
+    <canvas id="canvas" width="300" height="300">
+      Le navigateur ne prend pas en charge le canvas 
+    </canvas>
+    
+    <script>
+      const Cx=300;
+      const Cy=300;
+
+      var contexte=document.getElementById("canvas").getContext("2d");
+      function dessine_aiguille(longueur, angle, thick) {
+            contexte.lineWidth = thick;
+            var Px,Py;
+
+            Px=parseInt(Cx/2 + longueur * Math.cos(angle));
+            Py=parseInt(Cy/2 - longueur * Math.sin(angle));
+
+            contexte.beginPath();
+            contexte.moveTo(Cx/2, Cy/2);
+            contexte.lineTo(Px,Py);
+            contexte.stroke();
+        }
+      
+        dessine_aiguille(50,0,5);
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,207 @@
+<html>
+  <head>
+    <style>
+
+      body{
+          /*margin: 0px;*/
+	  
+          display:flex;
+          align-items: center;
+      }
+
+      main{
+	  margin-left:auto;
+	  margin-right:auto;
+          /*margin-left: 300px;*/
+          align-items: center;
+	  width: 650px;
+      }
+      h1{
+          text-align:center;
+      }
+      div{
+          position: absolute;
+          border: thick solid white; 
+      }
+      div#d0{
+          left: 30px;
+          top: 40px;
+      }
+      div#d1{
+          left: 240px;
+          top: 40px;
+      }
+      div#d2{
+          left: 450px;
+          top: 40px;
+      }
+      div#d3{
+          left: 30px;
+          top: 250px;
+      }
+      div#d4{
+          left: 240px;
+          top: 250px;
+      }
+      div#d5{
+          left: 450px;
+          top: 250px;
+      }
+      img{
+          width: 200px;
+          height: 200px;	  
+      }
+      div#container{
+	  
+	  margin-top: 0px;	  
+	  padding:0;
+      }
+      nav{
+          display:flex;
+          justify-content: center;
+      }
+    </style>
+  </head>
+  
+  <body>
+    <main>
+      <h1> Puzzle </h1>
+      
+    <nav>
+      
+    <form>
+      <input type="button" value="Echanger" id="exch">
+      <input type="button" value="Tourner" id="turn">
+    </form> 
+    </nav>
+    
+    <div id="container">
+      <div id="d0" >
+	<img data-pos="0" data-orientation="0" src="piece0.png">
+      </div>
+      <div id="d1">
+        <img data-pos="1" data-orientation="0" src="piece1.png">
+      </div>
+      <div id="d2">
+        <img data-pos="2" data-orientation="0" src="piece2.png">
+      </div>
+      <div id="d3">
+        <img data-pos="3" data-orientation="0" src="piece3.png">
+      </div>
+      <div id="d4">
+        <img data-pos="4" data-orientation="0" src="piece4.png">
+      </div>
+      <div id="d5">
+        <img data-pos="5" data-orientation="0" src="piece5.png">
+      </div>
+    </div>
+    </main>
+
+    <script>
+      const e0=document.getElementById("d0");
+      const e1=document.getElementById("d1");
+      const e2=document.getElementById("d2");
+      const e3=document.getElementById("d3");
+      const e4=document.getElementById("d4");
+      const e5=document.getElementById("d5");
+      const b1=document.getElementById("exch")
+
+      var selected=[];
+
+
+      e0.style.borderColor="white";
+      e1.style.borderColor="white";
+      e2.style.borderColor="white";
+      e3.style.borderColor="white";
+      e4.style.borderColor="white";
+      e5.style.borderColor="white";
+      
+      function swap(a,b){
+
+        var img1 = a.getElementsByTagName('img')[0];
+        var img2 = b.getElementsByTagName('img')[0];
+
+        var tempSrc = img1.src;
+        img1.src = img2.src;
+        img2.src = tempSrc;
+
+        var tempPosition = img1.getAttribute('data-position');
+        img1.setAttribute('data-position', img2.getAttribute('data-position'));
+        img2.setAttribute('data-position', tempPosition);
+      }
+
+      function init(){
+        var tab=[e0,e1,e2,e3,e4,e5];
+        var a;
+        var b;
+        for(let i=0;i<60;i++){
+            a=tab[parseInt(6*Math.random())];
+            b=tab[parseInt(6*Math.random())];
+            swap(a,b);
+        }
+      }
+      
+      
+
+      function select(e){
+        if(e.style.borderColor=="white"){
+          selected.push(e);
+          e.style.borderColor="red";
+        }
+        else{
+          selected.pop(e);
+          e.style.borderColor="white";
+        }
+
+        if(selected.length>2){
+          select(selected[2]);
+        }
+      }
+
+      function echange(){
+        swap(selected[0],selected[1]);
+
+      }
+
+      
+
+      init();
+
+
+
+      e0.addEventListener("click",function(){
+          select(e0);
+      });
+      
+      e1.addEventListener("click",function(){
+          select(e1);
+      });      
+
+      e2.addEventListener("click",function(){
+          select(e2);
+      });      
+
+      e3.addEventListener("click",function(){
+          select(e3);
+      });      
+
+      e4.addEventListener("click",function(){
+          select(e4);
+      });      
+
+      e5.addEventListener("click",function(){
+          select(e5);
+      });
+      
+      b1.addEventListener("click",echange);
+    </script>
+
+    
+
+
+</script>
+
+  </body>
+</html>
+
+
